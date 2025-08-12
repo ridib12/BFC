@@ -38,34 +38,52 @@
   
   /* Main Container Styling */
   .container {
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
-  }
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  overflow-y: auto; /* optional scroll if needed */
+  height: 100vh;
+  padding-top: 80px; /* room for nav/logo */
+  box-sizing: border-box;
+}
   
-  h1 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #2a2a2a;
-  }
-  
-  /* Video Styling */
-  video {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    margin: 20px auto;
-    display: block;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  }
-  .navigation {
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  margin: 20px;
-  position:absolute;
-  top: 20px;
-  left: 20px;
+ h1 {
+  font-size: 16px; /* smaller headings */
+  margin: 10px 0;   /* reduce vertical space */
+  color: #2a2a2a;
+}
+
+/* Fit all video frames in one page */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.video-card {
+  width: 30%; /* 3 per row */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.video-card h2 {
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .navigation a {
@@ -82,41 +100,18 @@
   color: #555;
   padding: 0 5px;
 }
-  /* Navigation Buttons */
-  /* .navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-  }
-  
-  .navigation-buttons button {
-    padding: 12px 24px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  } */
-  
-  /* .navigation-buttons button:hover {
-    background-color: #45a049;
-  } */
-  
-  /* Responsive Adjustments */
-@media (max-width: 600px) {
-    .logo-container {
-      flex-direction: column;
-      gap: 15px;
-    }
-  
-/* .navigation-buttons {
-      flex-direction: column;
-      gap: 15px;
-    } */
 
+@media (max-width: 900px) {
+  .video-card {
+    width: 45%;
   }
+}
+
+@media (max-width: 600px) {
+  .video-card {
+    width: 100%;
+  }
+}
 </style>  
 <head>
   <meta charset="UTF-8" />
@@ -132,7 +127,7 @@
             <span>&gt;</span>
             <a href="lang_select_deep_clean.html">Language Selection</a>
             <span>&gt;</span>
-            <a href="proc&postproesp.html">Procedure/Post-Procedure/Provider to Patient Instructions</a>
+            <a href="procedure&post-pro.html">Procedure/Post-Procedure</a>
     </nav>
         
   <header>
@@ -141,18 +136,41 @@
     </div>
   </header>
   
-  <div class="container">
-    <h1>Deep Cleaning Procedure</h1>
-    
+  <div class="video-grid">
+  <div class="video-card">
     <video controls>
-      <source src="Deep Cleaning-Spanish.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      <source src="Intro_Greeting.mp4" type="video/mp4">
     </video>
-
-    <!-- <div class="navigation-buttons">
-      <button onclick="window.location.href='lang_select_deep_clean';">Back</button>
-      <button onclick="window.location.href='thank_you_page';">Next</button>
-    </div> -->
+    <h2>Introduction</h2>
   </div>
+
+  <div class="video-card">
+    <video controls>
+      <source src="Healthy_ProcedureExpl.mp4" type="video/mp4">
+    </video>
+    <h2>1st Appointment (Healthy Gum)</h2>
+  </div>
+
+  <div class="video-card">
+    <video controls>
+      <source src="Bone_Loss_Procedure.mp4" type="video/mp4">
+    </video>
+    <h2>1st Appointment (Bone Loss)</h2>
+  </div>
+
+  <div class="video-card">
+    <video controls>
+      <source src="Gingivitis_ProcedureExpl.mp4" type="video/mp4">
+    </video>
+    <h2>1st Appointment (Gingivitis)</h2>
+  </div>
+
+  <div class="video-card">
+    <video controls>
+      <source src="Post_ProcedureCare.mp4" type="video/mp4">
+    </video>
+    <h2>Post-Procedure</h2>
+  </div>
+</div>
 </body>
 </html>
