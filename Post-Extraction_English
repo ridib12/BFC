@@ -137,7 +137,7 @@ margin: 0;
      <h2> </h2>
      <h2> </h2>
        <div class="button-container">
-     <button class="button-64" onclick="window.location.href='https://www.mouthhealthy.org/all-topics-a-z/extractions">
+     <button class="button-64" onclick="window.location.href='https://www.mouthhealthy.org/all-topics-a-z/extractions';">
        <span>Learn More About After Tooth Extraction Care</span>
      </button>
    </div>
